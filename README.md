@@ -1,5 +1,5 @@
 # Todos for Fun
-# Technologies used
+- Technologies used
 built with react
 mongoose
 nodeJs
