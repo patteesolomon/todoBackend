@@ -1,23 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import Todo from './components/Todo';
+import Todos from './components/Todos';
+import { EditTodo } from './components/EditTodo';
+import styled from 'styled-components';
+
+/*
+Objectives
+How to use Styled Components
+
+*/
+
+const Background = styled.div`
+  background-color: #051749;
+  color: palevioletred;
+  text-align: center;
+`
+
+const TodoS = styled.div`
+  text-align: center;
+  display: flex;
+  justify-content: center;
+`
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Background>
+        App
+        <Router>
+          <Routes> 
+            <Route path="/" element={<TodoS><Todos/></TodoS>}/>
+            <Route path='/:id' element={<Todo></Todo>}/>
+            <Route path='/:id/edit' element={<EditTodo/>}/>
+          </Routes>
+        </Router>
+      </Background>
+      
     </div>
   );
 }
