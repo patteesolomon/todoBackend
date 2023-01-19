@@ -26,6 +26,7 @@ export const EditTodo = () => {
     const BushidoButton = styled.button`
         background-color: lime;
     `;
+
     return (
         <div>
             <form onSubmit = {editTheTodo}>
@@ -36,5 +37,6 @@ export const EditTodo = () => {
                 <BushidoButton><input type='submit'/></BushidoButton>
             </form>
         </div>
-    )
+        )
+    
 }

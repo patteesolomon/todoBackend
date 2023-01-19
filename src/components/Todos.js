@@ -33,6 +33,9 @@ const TodoStyle = styled.a`
             <ul>
                 {/* conditional rendering */}
                 {/* this conditional heirarchy order is important */}
+                {/*conditional styles*/}
+                
+            
             {todoList.map((todo) =>{
                 if(todo.complete === true){
                     return (

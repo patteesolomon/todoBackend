@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <Background>
-        App
+        Todo App
         <Router>
           <Routes> 
             <Route path="/" element={<TodoS><Todos/></TodoS>}/>

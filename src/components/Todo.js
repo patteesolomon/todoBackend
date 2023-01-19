@@ -12,6 +12,13 @@ export default function Todo() {
     .then(res => setTodo(res.data));
   }, []);
 
+    const BushidoText = styled.h3`
+    background-color: yellow;
+    `
+
+    const BushidoSlash = styled.h3`
+    text-decoration: line-through;
+    `
     const deleteTheTodo = () =>
     {
       // delete function goes here
@@ -23,11 +30,24 @@ export default function Todo() {
     const BushidoButton = styled.button`
         background-color: cyan;
     `;
+
   return (
-    <div className='each'> 
-      <h3>description: {todo.description}</h3>
-      Completed:{todo.complete === true? (<input type="checkbox" checked></input>) 
-      : (<input type="checkbox"></input>)}
+    <div className='each'>
+      {todo.complete === true? 
+        (<BushidoSlash>
+          <h3>description: {todo.description}</h3>
+          <h3>Completed: </h3>
+        </BushidoSlash>) 
+        : 
+        (<BushidoText>
+          <h3>description: {todo.description}</h3>
+          <h3>Completed: </h3>
+        </BushidoText> )}
+      
+      {todo.complete === true? 
+      (<input type="checkbox" checked></input>) 
+      : 
+      (<input type="checkbox"></input>)}
       <br/>
       <BushidoButton><button onClick = {() => {nav(`/${id}/edit`)}}>Edit</button></BushidoButton>
       <br/>
